@@ -1,6 +1,5 @@
 import qsTruthy from "./utils/qs_truthy";
 import screenfull from "screenfull";
-import { inGameActions } from "./input-mappings";
 
 const playerHeight = 1.6;
 const isBotMode = qsTruthy("bot");
@@ -49,8 +48,6 @@ export default class SceneEntryManager {
     } else if (AFRAME.utils.device.isMobile()) {
       document.body.addEventListener("touchend", requestFullscreen);
     }
-
-    AFRAME.registerInputActions(inGameActions, "default");
 
     if (isMobile || qsTruthy("mobile")) {
       this.playerRig.setAttribute("virtual-gamepad-controls", {});
